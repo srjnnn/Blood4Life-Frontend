@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import Signup from './pages/signup'
+import Signup from './pages/Signup'
+import BloodGroup from './pages/BloodGroup'
 
 function App() {
 
   return (
     <>
-      <Signup/>
+      {/* <Signup/> */}
+      <BloodGroup/>
     </>
   )
 }
