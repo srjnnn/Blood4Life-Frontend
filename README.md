@@ -14,7 +14,6 @@ A mission-driven web app that connects blood donors and recipients by blood grou
 - 🔐 **Privacy-respecting**, consent-based sharing of contact info  
 
 > *SMS coming soon via Twilio or local gateway
-
 ---
 
 ## 🌍 Why It Matters
@@ -93,7 +92,6 @@ Nepal—and many countries—still face **delays in emergency blood access** due
 - ☁️ [Cloudflare Pages](https://pages.cloudflare.com/) – Free hosting
 
 > This app wouldn’t be possible without these incredible tools and their communities.
-
 ---
 
 ## 📬 Collaboration
@@ -120,7 +118,6 @@ Let’s collaborate to save lives.
 
 > “I built Blood4Life after seeing how difficult it was for people in my own community to find blood donors in time.  
 > This app is more than code — it's my contribution toward saving lives using technology.”
-
 ---
 
 ## 📝 License
