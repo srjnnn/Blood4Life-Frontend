@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '../components/bloodgroupcard';
+import Card from '../../components/bloodgroupcard';
 
 const bloodGroups = ['A', 'B', 'AB', 'O'];
 const rhFactors = ['+', '-'];
