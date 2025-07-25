@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Signup = () => {
+const AuthHome = () => {
   return (
     <div className='bg-red-600 h-dvh w-dvw flex flex-col items-center justify-between'>
         <div className='flex items-end h-[50dvh]'>
@@ -19,4 +19,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default AuthHome

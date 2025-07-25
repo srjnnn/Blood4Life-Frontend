@@ -8,6 +8,7 @@ const v1Api = `${baseUrl}/v1`;
 
 export const apiRoutes = {
   auth : {
+    validate : `${v1Api}/validate`,
     signUp : `${v1Api}/signup`,
     verify : `${v1Api}/signup/verify`,
     login : `${v1Api}/login`,
