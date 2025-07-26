@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 
-import Auth from './pages/Auth';
+import Auth from './pages/auth/authHome';
+import SignIn from './pages/auth/signin';
 import SignUp from './pages/auth/signup';
-import Dashboard from './pages/dashboard';
-import Profile from './pages/profile';
+import Home from './pages/mainPages/homePage';
+import Profile from './pages/mainPages/profile';
 import BloodGroup from './pages/auth/BloodGroup';
 
 import Nav from './components/nav/nav';
@@ -43,18 +44,55 @@ function App() {
   // If not logged in, show only Auth/Signup
   if (!isLoggedin) {
     const publicRoutes = createBrowserRouter([
+      // {
+      //   path: '/',
+      //   element: <Auth />,
+      // },
+      // {
+      //   path: '/signup',
+      //   element: <SignUp />,
+      // },
+      // {
+      //   path: '/signin',
+      //   element: <SignIn />,
+      // },
+      // {
+      //   path: '*',
+      //   element: <div className="text-center mt-10 font-bold">404 - Page Not Found</div>,
+      // },
       {
-        path: '/',
-        element: <Auth />,
-      },
-      {
-        path: '/signup',
-        element: <SignUp />,
-      },
-      {
-        path: '*',
-        element: <div className="text-center mt-10 font-bold">404 - Page Not Found</div>,
-      },
+      path: '/',
+      element: (
+        <Layout>
+          <Home />
+        </Layout>
+      ),
+    },
+    {
+      path: '/profile',
+      element: (
+        <Layout>
+          <Profile />
+        </Layout>
+      ),
+    },
+    {
+      path: '/bloodgroup',
+      element: (
+        <Layout>
+          <BloodGroup />
+        </Layout>
+      ),
+    },
+    {
+      path: '*',
+      element: (
+        <Layout>
+          <div className="text-center mt-10 font-bold">404 - Page Not Found</div>
+        </Layout>
+      ),
+    },
+
     ]);
     return <RouterProvider router={publicRoutes} />;
   }
@@ -65,7 +103,7 @@ function App() {
       path: '/',
       element: (
         <Layout>
-          <Dashboard />
+          <Home />
         </Layout>
       ),
     },

@@ -112,7 +112,7 @@
 
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient.js"; // Make sure this is the correct path
+import { supabase } from "../../../lib/supabaseClient.js"; // Make sure this is the correct path
 
 export default function Profile() {
   const [user, setUser] = useState(null);
