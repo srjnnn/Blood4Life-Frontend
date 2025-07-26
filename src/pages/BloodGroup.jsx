@@ -9,14 +9,17 @@ const BloodGroup = () => {
   const [selectedRh, setSelectedRh] = useState('');
 
   return (
-      <div className="flex flex-col items-center">
-        <div className="w-full bg-[#C40000] rounded-b-4xl h-20 flex items-center justify-between px-4 text-white">
-          <button>&lt;</button>
-          <h2 className="text-[18px] font-medium">Pick your Blood Group</h2>
+      <div className="min-h-dvh flex flex-col items-center w-screen">
+      <div className="w-full h-[7vh] md:h-[15vh] bg-[#c30000] text-white  rounded-b-[30px] flex pt-3 justify-between">
+          <button className="w-6 h-6">
+            <img src="/left.png" alt="<" />
+          </button>
+          <h2 className="text-base font-medium">Pick your Blood Group</h2>
           <div></div>
         </div>
-      <div>
-            <div className="grid grid-cols-2 gap-4 mt-8">
+      <div className='flex w-[80%] flex-col items-center'>
+        <h2 className="text-[18px] font-medium mt-8">Select your Blood Type</h2>
+            <div className="flex flex-wrap justify-center gap-4 mt-2">
               {bloodGroups.map(group => (
                 <Card
                   key={group}
@@ -28,7 +31,8 @@ const BloodGroup = () => {
             </div>
 
 
-            <div className="flex gap-4 mt-8">
+            <h2 className="text-[18px] font-medium mt-8">Select your Rh Factor</h2>
+            <div className="flex gap-4 justify-center mt-2">
               {rhFactors.map(factor => (
                 <Card
                   key={factor}
@@ -40,7 +44,7 @@ const BloodGroup = () => {
             </div>
       </div>
         <button
-          className="bg-[#C40000] text-white px-16 py-3 font-bold text-xl rounded-lg mt-10 fixed bottom-10"
+          className="bg-[#C40000] text-white px-16 py-3 font-bold text-xl rounded-lg mt-auto mb-5"
           onClick={() => {
             if (!selectedGroup || !selectedRh) {
               alert("select both blood group and factor");
