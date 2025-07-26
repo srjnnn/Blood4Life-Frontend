@@ -79,10 +79,10 @@ Nepal—and many countries—still face **delays in emergency blood access** due
 - 👨‍💻 Srijan Kharel — Full-stack dev, backend, architecture, and project management
 
 **UI/UX Design**  
-- 🎨 Prajwal — Responsible for creating beautiful, user-friendly layouts and branding
+- 🎨 Prajwal & Benjiv — Responsible for creating beautiful, user-friendly layouts and branding
 
 **Frontend Development**  
-- 🧑‍💻 Ujwal & Rijan — Frontend implementation using React and Tailwind CSS
+- 🧑‍💻 Ujwal, Prajjawl & Rijan — Frontend implementation using React and Tailwind CSS
 
 **Special Thanks To Open Source Contributors & Tools**  
 - 🛠 [Supabase](https://supabase.io/) – Backend-as-a-service  
