@@ -17,7 +17,7 @@ const SortFilter = () => {
   return (
     <div className="mt-[16vh] flex justify-center mb-3 gap-[20%] w-screen">
       {/* Sort Button */}
-      <div className="relative">
+      <div>
         <button 
           onClick={() => setShowSortDropdown(prev => !prev)}
           className="flex items-center gap-2 h-[45px] w-[153px] rounded-[20px] border border-[#0000001a] bg-white text-[#c30000b2] font-light text-base px-4"
@@ -40,7 +40,7 @@ const SortFilter = () => {
       </div>
 
       {/* Filter Button */}
-      <div className="relative">
+      <div >
         <button 
           onClick={() => setShowFilterDropdown(prev => !prev)}
           className="flex items-center gap-2 h-[45px] w-[149px] rounded-[20px] border border-[#0000001a] bg-white text-[#c30000b2] font-light text-base px-4"
