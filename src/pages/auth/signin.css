@@ -1,0 +1,102 @@
+.auth-container {
+  background-size: cover;
+  background-position: top;
+  width: 466px;
+  height: 879px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  position: relative;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.header-section {
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+
+.tagline {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.welcome-text {
+  color: rgb(255, 255, 255);
+
+  margin: 10px 0;
+}
+
+.signin-prompt {
+  font-size: 14px;
+}
+
+.form-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 60%;
+  margin-bottom: 200px;
+  color: #000;
+ 
+  
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.options-row a {
+  color: gray;
+  text-decoration: none;
+}
+
+.signin-button {
+  background: red;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.signup-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #ff0000;
+}
+
+.signup-footer a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
