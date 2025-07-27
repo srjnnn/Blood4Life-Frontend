@@ -5,16 +5,17 @@ const SignUp = () => {
     name: '',
     email: '',
     mobile: '',
-    age: '',
+    age: 18,
     district: 'Jhapa',
     municipality: '',
+    image: null
   });
 
-    const municipalities = [
-  "Birtamode", "Damak", "Mechinagar", "Arjundhara", "Kankai",
-  "Gauradaha", "Gaurigunj", "Barhadashi", "Buddhashanti",
-  "Haldibari", "Jhapa", "Kamal"
-];
+  const municipalities = [
+    "Birtamode", "Damak", "Mechinagar", "Arjundhara", "Kankai",
+    "Gauradaha", "Gaurigunj", "Barhadashi", "Buddhashanti",
+    "Haldibari", "Jhapa", "Kamal"
+  ];
 
   const [profileImage, setProfileImage] = useState(null);
   const [errors, setErrors] = useState({});
@@ -28,6 +29,7 @@ const SignUp = () => {
     if (file) {
       const imageURL = URL.createObjectURL(file);
       setProfileImage(imageURL);
+      setFormData({ ...formData, image: file });
     }
   };
 
@@ -47,8 +49,7 @@ const SignUp = () => {
     if (!formData.district) newErrors.district = "District is required";
     if (!formData.municipality) newErrors.municipality = "Municipality is required";
 
-
-    if (!profileImage) newErrors.image = "Profile image is required";
+    if (!formData.image) newErrors.image = "Profile image is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -58,28 +59,32 @@ const SignUp = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log('Form Data:', formData);
-      console.log('Profile Image:', profileImage);
+      console.log('Profile Image URL (preview):', profileImage);
     }
   };
 
   return (
     <div className="min-h-dvh bg-white flex flex-col items-center">
-      <div className="w-full h-[10vh] md:h-[15vh] bg-[#c30000] text-white  rounded-b-[30px] flex pt-3 justify-between">
+      {/* Header */}
+      <div className="w-full h-[10vh] md:h-[15vh] bg-[#c30000] text-white rounded-b-[30px] flex pt-3 justify-between px-4 items-center">
         <button className="w-6 h-6">
           <img src="/left.png" alt="<" />
         </button>
         <h1 className="text-base font-medium">Sign Up</h1>
-        <div className='h-1 w-7'></div>
+        <div className="h-1 w-7" />
       </div>
 
+      {/* Profile Image Upload */}
       <div className="relative mt-[-40px] md:mt-[-80px]">
         <img
           src={profileImage || "/default-profile.png"}
-          className="w-25 h-25 rounded-full border-4 border-white object-cover mt-4"
+          alt="Profile"
+          className="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-white object-cover mt-4"
         />
         <label
           htmlFor="imageUpload"
           className="absolute bottom-0 right-0 bg-red-600 p-1 rounded-full cursor-pointer"
+          aria-label="Upload profile image"
         >
           <svg
             className="w-4 h-4 text-white"
@@ -96,11 +101,12 @@ const SignUp = () => {
           className="hidden"
           onChange={handleImageChange}
         />
-        
       </div>
       {errors.image && <p className="text-sm text-red-500 text-center">{errors.image}</p>}
 
-      <form onSubmit={handleSubmit} className="w-full md:w-128 flex-1 px-6 mt-6 flex flex-col space-y-4">
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="w-full md:w-128 px-6 mt-6 flex flex-col space-y-4">
+        {/* Name */}
         <div>
           <label className="text-sm text-red-700 font-medium">Name</label>
           <input
@@ -109,10 +115,12 @@ const SignUp = () => {
             value={formData.name}
             onChange={handleChange}
             className="w-full border border-red-300 rounded-md p-2"
+            required
           />
           {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
         </div>
 
+        {/* Email */}
         <div>
           <label className="text-sm text-red-700 font-medium">Email</label>
           <input
@@ -121,10 +129,12 @@ const SignUp = () => {
             value={formData.email}
             onChange={handleChange}
             className="w-full border border-red-300 rounded-md p-2"
+            required
           />
           {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
         </div>
 
+        {/* Mobile */}
         <div>
           <label className="text-sm text-red-700 font-medium">Mobile Number</label>
           <input
@@ -133,35 +143,34 @@ const SignUp = () => {
             value={formData.mobile}
             onChange={handleChange}
             className="w-full border border-red-300 rounded-md p-2"
+            required
           />
           {errors.mobile && <p className="text-sm text-red-500">{errors.mobile}</p>}
         </div>
 
+        {/* Age */}
         <div>
           <label className="text-sm text-red-700 font-medium">Age</label>
           <input
             type="number"
             name="age"
+            min="18"
+            max="65"
             value={formData.age}
             onChange={handleChange}
             className="w-full border border-red-300 rounded-md p-2"
+            required
           />
           {errors.age && <p className="text-sm text-red-500">{errors.age}</p>}
         </div>
 
+        {/* District (static display) */}
         <div>
           <label className="text-sm text-red-700 font-medium">District</label>
-          <select
-            name="district"
-            value={formData.district}
-            onChange={handleChange}
-            className="w-full border border-red-300 rounded-md p-2"
-            disabled
-          >
-            <option value="Jhapa">Jhapa</option>
-          </select>
+          <p className="border border-red-300 rounded-md p-2 bg-gray-100">Jhapa</p>
         </div>
 
+        {/* Municipality */}
         <div>
           <label className="text-sm text-red-700 font-medium">Municipality</label>
           <select
@@ -169,6 +178,7 @@ const SignUp = () => {
             value={formData.municipality}
             onChange={handleChange}
             className="w-full border border-red-300 rounded-md p-2"
+            required
           >
             <option value="">Select Municipality</option>
             {municipalities.map((muni) => (
@@ -182,13 +192,17 @@ const SignUp = () => {
           )}
         </div>
 
+        {/* Terms */}
         <p className="text-xs text-gray-600 text-center mt-auto">
-          By continuing, you agree to our <span className="text-red-600 underline cursor-pointer">Privacy Policy</span> and <span className="text-red-600 underline cursor-pointer">Terms of Use</span>.
+          By continuing, you agree to our{" "}
+          <span className="text-red-600 underline cursor-pointer">Privacy Policy</span> and{" "}
+          <span className="text-red-600 underline cursor-pointer">Terms of Use</span>.
         </p>
 
+        {/* Submit */}
         <button
           type="submit"
-          className="bg-[#C40000] text-white px-16 py-3 font-bold text-xl rounded-lg mb-15"
+          className="bg-[#C40000] text-white px-16 py-3 font-bold text-xl rounded-lg mb-6"
         >
           Continue
         </button>

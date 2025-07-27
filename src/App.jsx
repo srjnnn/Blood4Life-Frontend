@@ -8,7 +8,7 @@ import SignUp from './pages/auth/signup';
 import Dashboard from './pages/dashboard';
 import Profile from './pages/profile';
 import BloodGroup from './pages/auth/BloodGroup';
-
+import SignIn from './pages/auth/signin';
 import Nav from './components/nav/nav';
 import apiRequest from './utils/api';
 import { apiRoutes } from './utils/globalConstraints';
@@ -31,7 +31,7 @@ function App() {
         return;
       }
       const response = await apiRequest(apiRoutes.auth.validate, 'POST', { token: authToken });
-      setIsLoggedin(!!response);
+      setIsLoggedin(response.authenticated);//returns in true or false
     };
     checkAuthStatus();
   }, []);
@@ -50,6 +50,10 @@ function App() {
       {
         path: '/signup',
         element: <SignUp />,
+      },
+      {
+        path : "/signin",
+        element: <SignIn />
       },
       {
         path: '*',

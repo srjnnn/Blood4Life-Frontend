@@ -1,15 +1,14 @@
 import './signin.css';
-import backgroundAuth from '/backgroundAuth.png'; // use correct relative path
+import { Link } from 'react-router-dom'; // 👈 import Link
 
-function signin() {
+function SignIn() {
   return (
-    <div
-      className="auth-container"
-      style={{ backgroundImage: `url(${backgroundAuth})` }}
-    >
+    <div className="auth-container">
       <div className="header-section">
-        <div className="logo"> <img src='/blood.svg' alt="" height='100px' width='50px'/></div>
-        <p className="tagline">One drop Can SaveLife!</p>
+        <div className="logo">
+          <img src='/blood.png' alt="Blood Logo" height='100px' width='50px' />
+        </div>
+        <p className="tagline">One drop Can Save Life!</p>
         <h2 className="welcome-text">Hello! Welcome Back</h2>
         <p className="signin-prompt">Sign in to your Account</p>
       </div>
@@ -40,10 +39,10 @@ function signin() {
       </div>
 
       <div className="signup-footer">
-        Don't have an account? <a href="#">sign up!</a>
+        Don't have an account? <Link to="/signup">sign up!</Link>
       </div>
     </div>
   );
 }
 
-export default signin;
+export default SignIn;
