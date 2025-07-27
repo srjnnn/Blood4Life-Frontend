@@ -112,7 +112,6 @@
 
 
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClient.js"; // Make sure this is the correct path
 
 export default function Profile() {
   const [user, setUser] = useState(null);
@@ -149,33 +148,7 @@ export default function Profile() {
   ];
 
   useEffect(() => {
-    const fetchUser = async () => {
-      const {
-        data: { user },
-        error,
-      } = await supabase.auth.getUser();
-
-      if (error) {
-        console.error("Auth error:", error);
-        setLoading(false);
-        return;
-      }
-
-      if (user) {
-        const { data: profile, error: profileError } = await supabase
-          .from("profiles")
-          .select("*")
-          .eq("id", user.id)
-          .single();
-
-        if (profileError) console.error("Profile fetch error:", profileError);
-        else setUser(profile);
-      }
-
-      setLoading(false);
-    };
-
-    fetchUser();
+// request backend
   }, []);
 
   if (loading) return <div className="text-center mt-10">Loading...</div>;

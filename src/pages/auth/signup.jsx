@@ -4,10 +4,11 @@ const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    mobile: '',
-    age: '',
+    mobile: null,
+    age: 18,
     district: 'Jhapa',
     municipality: '',
+    image:null
   });
 
     const municipalities = [
@@ -16,7 +17,6 @@ const SignUp = () => {
   "Haldibari", "Jhapa", "Kamal"
 ];
 
-  const [profileImage, setProfileImage] = useState(null);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {

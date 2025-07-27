@@ -1,14 +1,12 @@
 import './signin.css';
-import backgroundAuth from '/backgroundAuth.png'; // use correct relative path
 
-function signin() {
+function SignIn() {
   return (
-    <div
-      className="auth-container"
-      style={{ backgroundImage: `url(${backgroundAuth})` }}
-    >
+    <div className="auth-container">
       <div className="header-section">
-        <div className="logo"> <img src='/blood.svg' alt="" height='100px' width='50px'/></div>
+        <div className="logo">
+          <img src='../../../public/blood.png' alt="Blood Logo" height='100px' width='50px' />
+        </div>
         <p className="tagline">One drop Can SaveLife!</p>
         <h2 className="welcome-text">Hello! Welcome Back</h2>
         <p className="signin-prompt">Sign in to your Account</p>
@@ -46,4 +44,4 @@ function signin() {
   );
 }
 
-export default signin;
+export default SignIn;
