@@ -1,13 +1,14 @@
 import './signin.css';
+import { Link } from 'react-router-dom'; // 👈 import Link
 
 function SignIn() {
   return (
     <div className="auth-container">
       <div className="header-section">
         <div className="logo">
-          <img src='../../../public/blood.png' alt="Blood Logo" height='100px' width='50px' />
+          <img src='/blood.png' alt="Blood Logo" height='100px' width='50px' />
         </div>
-        <p className="tagline">One drop Can SaveLife!</p>
+        <p className="tagline">One drop Can Save Life!</p>
         <h2 className="welcome-text">Hello! Welcome Back</h2>
         <p className="signin-prompt">Sign in to your Account</p>
       </div>
@@ -38,7 +39,7 @@ function SignIn() {
       </div>
 
       <div className="signup-footer">
-        Don't have an account? <a href="#">sign up!</a>
+        Don't have an account? <Link to="/signup">sign up!</Link>
       </div>
     </div>
   );
