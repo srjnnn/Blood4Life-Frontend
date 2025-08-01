@@ -5,9 +5,9 @@ export default function Nav() {
   const location = useLocation();
 
   const navItems = [
-    { icon: "./dashboard/blood.png", label: "Blood donor", path: "/blood" },
+    { icon: "./dashboard/blood.png", label: "Blood donor", path: "/request" },
     { icon: "./dashboard/event.png", label: "Event", path: "/event" },
-    { icon: "./dashboard/home.png", label: "Home", path: "/" },
+    { icon: "./dashboard/home.png", label: "Home", path: "/home" },
     { icon: "./dashboard/donate.png", label: "Donate", path: "/donate" },
     { icon: "./dashboard/user.png", label: "User", path: "/profile" },
   ];
